@@ -48,7 +48,7 @@ function LandingPage() {
                                 <div className="card-title"><h3 className='ColorWhite'>Amazon </h3> <p className='text-info'>(40 LPA )</p> &nbsp; <p>Negotiable</p> </div>
                                 <p className="card-text">
                                     <p className="ColorWhite">Skills<p className='ColorGray'>Reactjs, Nodejs, Express, MongoDB</p></p>
-                                    <p className="ColorWhite">Experience<p className='ColorGray'>2 years</p></p>
+                                    <p className="ColorWhite">Experiences<p className='ColorGray'>2 years</p></p>
                                     <p className="ColorWhite">Work Type<p className='ColorGray'>Fulltime</p></p>
                                     <p className="ColorWhite">Job Type<p className='ColorGray'>Remote</p></p>
 
