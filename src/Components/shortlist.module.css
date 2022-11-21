@@ -1,0 +1,40 @@
+.shortlist{
+
+
+    background-color: #141414;
+    margin: 100px auto;
+    max-width: 1200px;
+    border-radius: 12px;
+    border: 1px solid rgb(48, 48, 48);
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 200px;
+  
+    z-index: 1;
+
+}
+
+.container{
+    padding:20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 12px;
+}
+
+.delete{
+    margin-left:97%;
+    margin-top: 20px;
+
+}
+.user{
+    display: flex;
+    align-items: center;
+    
+    border: 1px solid gray;
+
+}

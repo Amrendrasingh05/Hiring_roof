@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+*{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.TopHeader{
+  position:sticky !important;
+  top: 0px;
+  z-index: 2;
+  height: 80px;
+}
+.TopHeader input{
+  background: transparent;
+  color: gray;
+  border-radius: 10pc;
+  /* border-bottom-left-radius: 10pc; */
+}
+.searchBtn{
+  border-radius: 10pc !important;
+  margin-left: 2%;
+}
+.BgTheme{
+  background-color: #141414 !important; 
+  max-height: 400px;
+  overflow-y:scroll;
+}
+.BgThemeHome{
+  background-color: #141414 !important; 
+  position: relative;
+ 
+}
+.btn-outline-info{
+  border-radius: 10pc !important;
+}
+.RestaurantCard{
+  height: 180px;
+  color:rgb(88, 88, 88);
+  background-color: #141414 !important;
+  width: 75%;
+  margin-left: 1%;
+  border: 1px solid rgb(48, 48, 48) !important;
+  border-radius: 10px !important;
+  padding-left: 1%;
+}
+body{
+  background-color: #141414 !important;
+}
+.RestaurantCard{
+  height: 180px;
+  color:rgb(88, 88, 88);
+  background-color: #141414 !important;
+  width: 90%;
+  margin-left: 1%;
+  border: 1px solid rgb(48, 48, 48) !important;
+  border-radius: 10px !important;
+  padding-left: 1%;
+  margin-top: 4%;
+}
+.card-img{
+  height: 210px;
+  border-radius: 20px !important;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.card-title{
+  display: flex;
+}
+.card-text{
+  display: flex;
+  justify-content:space-between;
+}
+.RestaurantCard button{
+  width: 18%;
+  padding: 5px;
+  border: 0;
+  border-radius: 5px;
+}
+.RestaurantCard button:hover{
+ color: white;
+ background-color: rgb(139, 139, 139);
+}
+#grad {
+  /* background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgb(0, 0, 0)); */
+}
+.SignIn{
+  font-family: 'Poppins', sans-serif;
+  background-color: #141414;
+  width: 50%;
+}
+.SignDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 15%;
+  margin-left: 25%;
+  width: 70%;
+}
+.SignDetails input{
+  margin-top: 5%;
+  height: 50px;
+  border-radius: 10px;
+  padding-left: 5%;
+  border-radius: 10pc;
+  background: transparent !important;
+  color: gray;
+}
+.SignDetails button{
+  margin-top: 5%;
+  margin-bottom: 4%;
+  height: 40px;
+  width: 100px;
+  margin-left: 40%;
+  border-radius: 10pc;
+}
+.ColorWhite{
+  color: white;
+}
+.ColorGray{
+  color: gray;
+}
+.GetStartedImg{
+  width: 60%;
+/* height: 1500px; */
+border-bottom-left-radius: 50% 100%;
+border-bottom-right-radius: 50% 100%;
+background: linear-gradient(58.83deg, #000000 9.85%, rgba(0, 0, 0, 0) 66.64%),  
+/* url(https://c8.alamy.com/comp/PKDBP2/a-girl-with-a-notebook-and-a-cup-of-coffee-is-sitting-in-the-car-in-the-back-seat-PKDBP2.jpg) */
+
+}
+.GetSrtDetails{
+  width: 400px;
+  margin-right: 7%;
+ 
+}
+.alignCenter{
+  text-align: center;
+}
+.GetSrtDetails h1,p,input,button{
+margin-bottom: 7%;
+}
+.GetSrtName{
+  width: 412px;
+height: 40px;
+border-top: 0px;
+border-left: 0px;
+border-right: 0px;
+margin-bottom: 5%;
+/* background: transparent; */
+}
+.GetSrtNum{
+  width: 412px;
+height: 40px;
+border-top: 0px;
+border-left: 0px;
+border-right: 0px;
+margin-bottom: 5%;
+/* background: transparent; */
+}
+.GetSrtEmail{
+  width: 412px;
+height: 40px;
+border-top: 0px;
+border-left: 0px;
+border-right: 0px;
+margin-bottom: 5%;
+/* background: transparent; */
+}
+.GetSrtDetails button{
+width: 412px;
+height: 62px;
+background-color: #DD3333;
+color: white;
+border: none;
+margin-bottom: 5%;
+}
+.GetSrtDetails button:hover{
+background-color: #ffffff;
+}
+
+.LandingPageContainer{
+ display: flex;
+ justify-content: space-between;
+}
+
+.JobPostingCard{
+  display: flex;
+  background-color: #141414 !important;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  border: 1px solid rgb(48, 48, 48) !important;
+  border-radius: 10pc;
+  margin-top: 2%;
+  margin-left: 2%;
+  top: 15%;
+  position: sticky;
+  z-index: 9999;
+}
+.JobPostingCard input,select{
+  padding: 7px;
+  border-radius: 10pc;
+  border: 1px solid rgb(48, 48, 48) !important;
+  background: transparent;
+  color: white;
+}
+.JobPostingCard button{
+  border-radius: 10pc;
+  width: 100px;
+}
