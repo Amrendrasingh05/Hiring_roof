@@ -47,28 +47,21 @@ function LandingPage() {
       </div>
 
       <div className="BgThemeHome">
+        <div className={style.blur}>
+          <Applicant trigger={applicant}>
+            <i class="fa-solid fa-x" onClick={() => setApplicant(false)}></i>
+          </Applicant>
+        </div>
+
+        <div className={style.blur}>
+          <Shortlist trigger={shortlist}>
+            <i class="fa-solid fa-x" onClick={() => setShortlist(false)}></i>
+          </Shortlist>
+        </div>
         <div className="card mb-3 RestaurantCard">
           <div className="row no-gutters">
             <div className="col-md-8">
               <div className="card-body">
-                <div className={style.blur}>
-                  <Shortlist trigger={shortlist}>
-                    <i
-                      class="fa-solid fa-x"
-                      onClick={() => setShortlist(false)}
-                    ></i>
-                  </Shortlist>
-                </div>
-
-                <div className={style.blur}>
-                  <Applicant trigger={applicant}>
-                    <i
-                      class="fa-solid fa-x"
-                      onClick={() => setApplicant(false)}
-                    ></i>
-                  </Applicant>
-                </div>
-
                 <div className="card-title">
                   <h3 className="ColorWhite">Amazon </h3>{" "}
                   <p className="text-info">(40 LPA )</p> &nbsp;{" "}
@@ -103,10 +96,7 @@ function LandingPage() {
                       {" "}
                       Applicatns
                     </button>
-                    <button
-                      className="btn btn-outline-info border border-info ms-5"
-                      onClick={() => setShortlist(true)}
-                    >
+                    <button className="btn btn-outline-info border border-info ms-5" onClick={() => setShortlist(true)}>
                       {" "}
                       Shortlisted{" "}
                     </button>
@@ -156,10 +146,7 @@ function LandingPage() {
                       {" "}
                       Applicatns
                     </button>
-                    <button
-                      className="btn btn-outline-info border border-info ms-5"
-                      onClick={() => setShortlist(true)}
-                    >
+                    <button className="btn btn-outline-info border border-info ms-5" onClick={() => setShortlist(true)}>
                       {" "}
                       Shortlisted{" "}
                     </button>
@@ -209,10 +196,7 @@ function LandingPage() {
                       {" "}
                       Applicatns
                     </button>
-                    <button
-                      className="btn btn-outline-info border border-info ms-5"
-                      onClick={() => setShortlist(true)}
-                    >
+                    <button className="btn btn-outline-info border border-info ms-5" onClick={() => setShortlist(true)}>
                       {" "}
                       Shortlisted{" "}
                     </button>
@@ -262,10 +246,7 @@ function LandingPage() {
                       {" "}
                       Applicatns
                     </button>
-                    <button
-                      className="btn btn-outline-info border border-info ms-5"
-                      onClick={() => setShortlist(true)}
-                    >
+                    <button className="btn btn-outline-info border border-info ms-5" onClick={() => setShortlist(true)}>
                       {" "}
                       Shortlisted{" "}
                     </button>
