@@ -9,12 +9,14 @@
   z-index: 2;
   height: 80px;
 }
+
 .TopHeader input{
   background: transparent;
   color: gray;
   border-radius: 10pc;
   /* border-bottom-left-radius: 10pc; */
 }
+
 .searchBtn{
   border-radius: 10pc !important;
   margin-left: 2%;
@@ -182,10 +184,12 @@ background-color: #ffffff;
 }
 
 .JobPostingCard{
+  padding: 10px;
   display: flex;
   background-color: #141414 !important;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   width: 80%;
   border: 1px solid rgb(48, 48, 48) !important;
   border-radius: 10pc;
