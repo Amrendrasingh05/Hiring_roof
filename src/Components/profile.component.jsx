@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Topheader from "./Topheader.component";
 import style from "./profile.module.css";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   const inputDetails = {
@@ -27,7 +27,7 @@ export default function Profile() {
 
   const validate = (values) => {
     const errors = {};
-   // const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    // const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
     if (!values.Name) {
       errors.Name = "Name is required";
@@ -72,15 +72,13 @@ export default function Profile() {
     return errors;
   };
 
- /* useEffect(() => {
+  /* useEffect(() => {
     console.log(error);
 
     if (Object.keys(error).length === 0 && isSubmit) {
       console.log(input);
     }
   }, [error]);  */
-
-  
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -120,8 +118,9 @@ export default function Profile() {
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU"
                   alt="img"
                 />
-                <input type="text" />
+                <input type="file" />
               </div>
+
               <div className={style.details}>
                 <h3 className="colorWhite">{input.Name}</h3>
 
@@ -142,21 +141,14 @@ export default function Profile() {
 
                 {!view ? (
                   <div className={style.icon}>
-                    <Link to={input.GitHub} >
+                    <Link to={input.GitHub}>
                       <i class="fa-brands fa-github"></i>
                     </Link>
                     <Link to={input.LinkedIn}>
-                      <i
-                        class="fa-brands fa-linkedin"
-                        to={input.LinkedIn}
-                      ></i>
+                      <i class="fa-brands fa-linkedin" to={input.LinkedIn}></i>
                     </Link>
                     <Link to={input.Email}>
-                      <i
-                        class="fa-solid fa-envelope"
-                        to={input.Email}
-                       
-                      ></i>
+                      <i class="fa-solid fa-envelope" to={input.Email}></i>
                     </Link>
                     <i class="fa-solid fa-phone"></i>
                   </div>
