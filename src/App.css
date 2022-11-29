@@ -80,9 +80,7 @@ body{
  color: white;
  background-color: rgb(139, 139, 139);
 }
-#grad {
-  /* background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgb(0, 0, 0)); */
-}
+
 .SignIn{
   font-family: 'Poppins', sans-serif;
   background-color: #141414;

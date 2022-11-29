@@ -75,7 +75,7 @@ export default function Shortlist(props) {
     setView(updatedUser);
   };
 
-  return props.trigger ? (
+  return ( props.trigger )? (
     <div className={style.shortlist}>
       <div className={style.delete}>{props.children}</div>
       <div className={style.container}>

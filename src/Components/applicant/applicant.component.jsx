@@ -1,8 +1,6 @@
-import style from '../shortlist.module.css'
+import style from "../shortlist.module.css";
 
-
-import React from 'react'
-
+import React, { useState } from "react";
 
 const user = [
   {
@@ -22,7 +20,7 @@ const user = [
   },
 
   {
-    id: 2,
+    id: 3,
     name: "Amar",
     skills: "Reactjs, Nodejs, Express, MongoDB",
     experience: "2 Years",
@@ -30,7 +28,7 @@ const user = [
   },
 
   {
-    id: 2,
+    id: 4,
     name: "Amar",
     skills: "Reactjs, Nodejs, Express, MongoDB",
     experience: "2 Years",
@@ -38,7 +36,7 @@ const user = [
   },
 
   {
-    id: 2,
+    id: 5,
     name: "Amar",
     skills: "Reactjs, Nodejs, Express, MongoDB",
     experience: "2 Years",
@@ -46,21 +44,21 @@ const user = [
   },
 
   {
-    id: 2,
+    id: 6,
     name: "Amar",
     skills: "Reactjs, Nodejs, Express, MongoDB",
     experience: "2 Years",
     bid: "(20 LPA)",
   },
   {
-    id: 2,
+    id: 7,
     name: "Amar",
     skills: "Reactjs, Nodejs, Express, MongoDB",
     experience: "2 Years",
     bid: "(25 LPA)",
   },
   {
-    id: 2,
+    id: 8,
     name: "Amar",
     skills: "Reactjs, Nodejs, Express, MongoDB",
     experience: "2 Years",
@@ -69,20 +67,32 @@ const user = [
 ];
 
 export default function Applicant(props) {
+  const [view, setView] = useState(user)
+
+  const shortListElement = (id) => {
+    const updatedUser = view.filter((item) => item.id !== id);
+    setView(updatedUser);
+  };
+
   return props.trigger ? (
     <div className={style.shortlist}>
-    <div className={style.delete}>{props.children}</div>
-    <div className={style.container}>
-      {user &&
-        user.map((item) => (
-          <div className={style.user} key={item.id}>
-            <h4>{item.name}</h4>
-            <p>{item.skills}</p>
-            <span>{item.experience}</span>
-            <p className='text-info'>{item.bid}</p>
-          </div>
-        ))}
+      <div className={style.delete}>{props.children}</div>
+      <div className={style.container}>
+        {view &&
+          view.map((item) => (
+            <div className={style.user} key={item.id}>
+              <h4>{item.name}</h4>
+              <p>{item.skills}</p>
+              <span>{item.experience}</span>
+              <p className="text-info">{item.bid}</p>
+              <button onClick={() => shortListElement(item.id)}>
+                shortlist
+              </button>
+            </div>
+          ))}
+      </div>
     </div>
-  </div>
-  ) : "";
+  ) : (
+    ""
+  );
 }

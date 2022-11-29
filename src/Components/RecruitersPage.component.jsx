@@ -29,6 +29,40 @@ function LandingPage() {
   const [listData, setListData] = useState([]);
   const [activity, setActivity] = useState("");
   const [edit, setEdit] = useState(false);
+  const [view, setView] = useState(false);
+  const [error, setError] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (!values.Name) {
+      errors.Name = "Name is required";
+    }
+
+    if (!values.username) {
+      errors.username = "username is required";
+    }
+
+    if (!values.Email) {
+      errors.Email = "Email is required";
+    }
+
+    return errors;
+  };
+
+
+  
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError(validate(listData));
+    setIsSubmit(true);
+
+    var obj = listData;
+    console.log(obj);
+  };
 
   const removeElement = (id) => {
     const updateData = listData.filter((item, ind) => ind !== id);
@@ -52,13 +86,15 @@ function LandingPage() {
   return (
     <div>
       <Topheader />
-
+      <form onSubmit={handleSubmit}>
       <div className="JobPostingCard">
+     
         <img
           src="https://lh3.googleusercontent.com/a-/ACNPEu-FtHh_sRN35Hm1Jo5K5A8EOlTbRtecZfMG2zV9Lw=s96-c"
           alt=""
           style={{ height: "70px", width: "70px", borderRadius: "50%" }}
         />
+        
 
         <input
           type="text"
@@ -81,11 +117,11 @@ function LandingPage() {
           name="type"
           value={activity.type}
           onChange={handleInput}
-        >Job
+        >
+          Job
           <option value="Type">Type</option>
           <option value="Negotiable">Negotiable</option>
           <option value="Non-Negotiable">Non-Negotiable</option>
-
         </select>
 
         <input
@@ -127,7 +163,10 @@ function LandingPage() {
         <button className="btn btn-outline-primary" onClick={add}>
           Post
         </button>
+
+       
       </div>
+      </form>
 
       <div className="BgThemeHome">
         <div className={style.blur}>
@@ -142,12 +181,6 @@ function LandingPage() {
           </Shortlist>
         </div>
 
-        <div className={style.blur}>
-          <Edit trigger={edit}>
-            <i class="fa-solid fa-x" onClick={() => setEdit(false)}></i>
-          </Edit>
-        </div>
-
         {listData &&
           listData.map((item, ind) => (
             <div className="card mb-3 RestaurantCard">
@@ -155,7 +188,7 @@ function LandingPage() {
                 <div className="col-md-8">
                   <div className="card-body">
                     <div className="card-title">
-                      <h3 className="ColorWhite">Amazon </h3>{" "}
+                      <h3 className="ColorWhite">{item.company} </h3>{" "}
                       <p className="text-info">({item.ctc}LPA)</p> &nbsp;{" "}
                       <p>{item.type}</p>{" "}
                     </div>
@@ -165,7 +198,8 @@ function LandingPage() {
                         <p className="ColorGray">{item.skills}</p>
                       </p>
                       <p className="ColorWhite">
-                        Experience<p className="ColorGray">{item.experience}Years</p>
+                        Experience
+                        <p className="ColorGray">{item.experience}Years</p>
                       </p>
                       <p className="ColorWhite">
                         Work Type<p className="ColorGray">{item.worktype}</p>

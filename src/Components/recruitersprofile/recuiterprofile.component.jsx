@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Topheader from "./Topheader.component";
-import style from "./profile.module.css";
+import Topheader from "../Topheader.component";
+import style from "../profile.module.css";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
@@ -95,7 +95,7 @@ export default function Profile() {
     <div className={style.profile}>
       <Topheader />
       <div className={style.heading}>
-        <h1>PROFILE</h1>
+        <h1>RECRUITERS PROFILE</h1>
       </div>
 
       <div className={style.forbtn}>

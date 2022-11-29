@@ -5,6 +5,7 @@ import LandingPage from './Components/LandingPage.component'
 import HomePage from './Components/Home.component'
 import ApplyPage from './Components/ApplyPage.component'
 import RecruitersPage from './Components/RecruitersPage.component'
+import RecruitersProfile from './Components/recruitersprofile/recuiterprofile.component';
 import Apply from './Components/apply.component';
 import Jobs from './Components/jobs.component';
 import Profile from './Components/profile.component';
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/Jobs" component={Jobs} />
       <Route exact path="/Apply" component={Apply} />
       <Route exact path="/RecruitersPage" component={RecruitersPage} />
+      <Route exact path="/RecruitersProfile" component={RecruitersProfile} />
       <Route exact path="/Profile" component={Profile} />
       
       </Switch>
