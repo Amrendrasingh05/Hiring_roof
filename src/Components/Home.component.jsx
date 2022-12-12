@@ -52,7 +52,7 @@ function LandingPage() {
                   <p className="text-info">(40 LPA )</p> &nbsp;{" "}
                   <p>Negotiable</p>{" "}
                 </div>
-                <p className="card-text">
+                <div className="card-text">
                   <p className="ColorWhite">
                     Skills
                     <p className="ColorGray">
@@ -68,7 +68,7 @@ function LandingPage() {
                   <p className="ColorWhite">
                     Job Type<p className="ColorGray">Remote</p>
                   </p>
-                </p>
+                </div>
                 <p className="card-text">
                   <small className="text-muted">Last updated 3 mins ago</small>
                 </p>

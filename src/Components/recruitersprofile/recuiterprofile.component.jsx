@@ -72,7 +72,6 @@ export default function Profile() {
     return errors;
   };
 
-
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
@@ -86,6 +85,7 @@ export default function Profile() {
     var obj = input;
     console.log(obj);
   };
+  
 
   const handleView = () => {
     setView(false);
@@ -111,7 +111,6 @@ export default function Profile() {
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU"
                   alt="img"
                 />
-                
               </div>
 
               <div className={style.details}>

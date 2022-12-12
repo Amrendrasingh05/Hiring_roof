@@ -8,14 +8,28 @@
   top: 0px;
   z-index: 2;
   height: 80px;
-}
 
+
+}
+.collapse{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
 .TopHeader input{
   background: transparent;
   color: gray;
   border-radius: 10pc;
   /* border-bottom-left-radius: 10pc; */
 }
+
+@media screen and (max-width:769px) {
+  .card-text{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 
 .searchBtn{
   border-radius: 10pc !important;
