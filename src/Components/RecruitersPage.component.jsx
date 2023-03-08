@@ -28,7 +28,7 @@ function LandingPage() {
   const [shortlist, setShortlist] = useState(false);
   const [listData, setListData] = useState([]);
   const [activity, setActivity] = useState("");
-  const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState();
   const [view, setView] = useState(false);
   const [error, setError] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -50,10 +50,6 @@ function LandingPage() {
 
     return errors;
   };
-
-
-  
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,95 +73,95 @@ function LandingPage() {
   const handleInput = (e) => {
     const { name, value } = e.target;
     setActivity({ ...activity, [name]: value });
+    setView(false);
   };
 
   const add = () => {
     setListData([...listData, activity]);
   };
 
+
+  
+
   return (
     <div>
       <Topheader />
       <form onSubmit={handleSubmit}>
-      <div className="JobPostingCard">
-     
-        <img
-          src="https://lh3.googleusercontent.com/a-/ACNPEu-FtHh_sRN35Hm1Jo5K5A8EOlTbRtecZfMG2zV9Lw=s96-c"
-          alt=""
-          style={{ height: "70px", width: "70px", borderRadius: "50%" }}
-        />
-        
+        <div className="JobPostingCard">
+          <img
+            src="https://lh3.googleusercontent.com/a-/ACNPEu-FtHh_sRN35Hm1Jo5K5A8EOlTbRtecZfMG2zV9Lw=s96-c"
+            alt=""
+            style={{ height: "70px", width: "70px", borderRadius: "50%" }}
+          />
 
-        <input
-          type="text"
-          placeholder="Company name"
-          name="company"
-          value={activity.company}
-          onChange={handleInput}
-        />
-        <input
-          type="number"
-          placeholder="Bid"
-          name="ctc"
-          value={activity.ctc}
-          onChange={handleInput}
-        />
+          <input
+            type="text"
+            placeholder="Company name"
+            name="company"
+            value={activity.company}
+            onChange={handleInput}
+          />
+          <input
+            type="number"
+            placeholder="Bid"
+            name="ctc"
+            value={activity.ctc}
+            onChange={handleInput}
+          />
 
-        <select
-          type="text"
-          placeholder="type"
-          name="type"
-          value={activity.type}
-          onChange={handleInput}
-        >
-          Job
-          <option value="Type">Type</option>
-          <option value="Negotiable">Negotiable</option>
-          <option value="Non-Negotiable">Non-Negotiable</option>
-        </select>
+          <select
+            type="text"
+            placeholder="type"
+            name="type"
+            value={activity.type}
+            onChange={handleInput}
+          >
+            Job
+            <option value="Type">Type</option>
+            <option value="Negotiable">Negotiable</option>
+            <option value="Non-Negotiable">Non-Negotiable</option>
+          </select>
 
-        <input
-          type="text"
-          placeholder="Skills"
-          name="skills"
-          value={activity.skills}
-          onChange={handleInput}
-        />
-        <input
-          type="number"
-          placeholder="Experience"
-          name="experience"
-          value={activity.experience}
-          onChange={handleInput}
-        />
+          <input
+            type="text"
+            placeholder="Skills"
+            name="skills"
+            value={activity.skills}
+            onChange={handleInput}
+          />
+          <input
+            type="number"
+            placeholder="Experience"
+            name="experience"
+            value={activity.experience}
+            onChange={handleInput}
+          />
 
-        <select
-          name="worktype"
-          id=""
-          value={activity.worktype}
-          onChange={handleInput}
-        >
-          <option value="Work Type">Work Type</option>
-          <option value="Full time">Full time</option>
-          <option value="Part time">Part time</option>
-        </select>
-        <select
-          name="jobtype"
-          id=""
-          value={activity.jobtype}
-          onChange={handleInput}
-        >
-          <option value="Job Type">Job Type</option>
-          <option value="Remote">Remote</option>
-          <option value="In office">In office</option>
-        </select>
+          <select
+            name="worktype"
+            id=""
+            value={activity.worktype}
+            onChange={handleInput}
+          >
+            <option value="Work Type">Work Type</option>
+            <option value="Full time">Full time</option>
+            <option value="Part time">Part time</option>
+          </select>
+          <select
+            name="jobtype"
+            id=""
+            value={activity.jobtype}
+            onChange={handleInput}
+          >
+            <option value="Job Type">Job Type</option>
+            <option value="Remote">Remote</option>
+            <option value="In office">In office</option>
+          </select>
 
-        <button className="btn btn-outline-primary" onClick={add}>
-          Post
-        </button>
-
-       
-      </div>
+          <button className="btn btn-outline-primary" onClick={add}>
+            Post
+          </button>
+        </div>
       </form>
 
       <div className="BgThemeHome">
@@ -188,24 +184,113 @@ function LandingPage() {
                 <div className="col-md-8">
                   <div className="card-body">
                     <div className="card-title">
-                      <h3 className="ColorWhite">{item.company} </h3>{" "}
-                      <p className="text-info">({item.ctc}LPA)</p> &nbsp;{" "}
-                      <p>{item.type}</p>{" "}
-                    </div>
+                      <form onSubmit={handleSubmit}>
+                      {!view ? (
+                        <h3 className="ColorWhite">{item.company} </h3>
+                      ) : (
+                        <input
+                          type="text"
+                          placeholder="Company name"
+                          name="company"
+                          value={activity.company}
+                          onChange={handleInput}
+                        />
+                      )}
+                      {!view ? (
+                        <p className="text-info">({item.ctc}LPA)</p>
+                      ) : (<>
+                       {"  "} <input
+                          type="number"
+                          placeholder="Bid"
+                          name="ctc"
+                          value={activity.ctc}
+                          onChange={handleInput}
+                        /></>
+                      )}
+                      &nbsp;{" "}
+                      {!view ? (
+                        <p>{item.type}</p>
+                      ) : (
+                        <select
+                          type="text"
+                          placeholder="type"
+                          name="type"
+                          value={activity.type}
+                          onChange={handleInput}
+                        >
+                          Job
+                          <option value="Type">Type</option>
+                          <option value="Negotiable">Negotiable</option>
+                          <option value="Non-Negotiable">Non-Negotiable</option>
+                        </select>
+                      )}
+                    </form></div>
                     <p className="card-text">
                       <p className="ColorWhite">
                         Skills
-                        <p className="ColorGray">{item.skills}</p>
+                        <br />
+                        {!view ? (
+                          <p className="ColorGray">{item.skills}</p>
+                        ) : (
+                          <input
+                            type="text"
+                            placeholder="Skills"
+                            name="skills"
+                            value={activity.skills}
+                            onChange={handleInput}
+                          />
+                        )}
                       </p>
                       <p className="ColorWhite">
                         Experience
-                        <p className="ColorGray">{item.experience}Years</p>
+                        <br />
+                        {!view ? (
+                          <p className="ColorGray">{item.experience}Years</p>
+                        ) : (
+                          <input
+                            type="number"
+                            placeholder="Experience"
+                            name="experience"
+                            value={activity.experience}
+                            onChange={handleInput}
+                          />
+                        )}
                       </p>
                       <p className="ColorWhite">
-                        Work Type<p className="ColorGray">{item.worktype}</p>
+                        Work Type
+                        <br />
+                        {!view ? (
+                          <p className="ColorGray">{item.worktype}</p>
+                        ) : (
+                          <select
+                            name="worktype"
+                            id=""
+                            value={activity.worktype}
+                            onChange={handleInput}
+                          >
+                            <option value="Work Type">Work Type</option>
+                            <option value="Full time">Full time</option>
+                            <option value="Part time">Part time</option>
+                          </select>
+                        )}
                       </p>
                       <p className="ColorWhite">
-                        Job Type<p className="ColorGray">{item.jobtype}</p>
+                        Job Type
+                        <br />
+                        {!view ? (
+                          <p className="ColorGray">{item.jobtype}</p>
+                        ) : (
+                          <select
+                            name="jobtype"
+                            id=""
+                            value={activity.jobtype}
+                            onChange={handleInput}
+                          >
+                            <option value="Job Type">Job Type</option>
+                            <option value="Remote">Remote</option>
+                            <option value="In office">In office</option>
+                          </select>
+                        )}
                       </p>
                     </p>
                     <p className="card-text">
@@ -214,34 +299,44 @@ function LandingPage() {
                       </small>
                     </p>
                     <div>
-                      <div>
-                        <button
-                          className="btn btn-outline-info border border-info  ms-0"
-                          onClick={() => setApplicant(true)}
+                      {!view ? (
+                        <div>
+                          <button
+                            className="btn btn-outline-info border border-info  ms-0"
+                            onClick={() => setApplicant(true)}
+                          >
+                            {" "}
+                            Applicants
+                          </button>
+                          <button
+                            className="btn btn-outline-info border border-info ms-5"
+                            onClick={() => setShortlist(true)}
+                          >
+                            {" "}
+                            Shortlisted{" "}
+                          </button>
+                          <button
+                            className="btn btn-outline-info"
+                            onClick={() => setView(true)}
+                          >
+                            ✎ Edit
+                          </button>
+                          <button
+                            className="btn btn-outline-info border border-info ms-5"
+                            onClick={() => removeElement(ind)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      ) : (
+                        <button type="submit"
+                          className="btn btn-outline-info border border-info ms-5" onClick={()=>setView(false)}
+                          
                         >
-                          {" "}
-                          Applicants
+                          Save
                         </button>
-                        <button
-                          className="btn btn-outline-info border border-info ms-5"
-                          onClick={() => setShortlist(true)}
-                        >
-                          {" "}
-                          Shortlisted{" "}
-                        </button>
-                        <button
-                          className="btn btn-outline-info"
-                          onClick={() => setEdit(true)}
-                        >
-                          ✎ Edit
-                        </button>
-                        <button
-                          className="btn btn-outline-info border border-info ms-5"
-                          onClick={() => removeElement(ind)}
-                        >
-                          Delete
-                        </button>
-                      </div>
+                      )}
+                    
                     </div>
                   </div>
                 </div>

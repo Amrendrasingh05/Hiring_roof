@@ -10,7 +10,11 @@ import Apply from './Components/apply.component';
 import Jobs from './Components/jobs.component';
 import Profile from './Components/profile.component';
 
+
 function App() {
+  
+  
+
   return (
     <Router>
       <Switch>

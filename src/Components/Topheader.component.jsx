@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css";
+import { useLocation } from "react-router-dom";
 import "../App.css";
 function BasicExample() {
-  const recruiter = true;
+  const location = useLocation()
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark TopHeader">
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="/Home">
         HiringRoof.com
       </a>
 
@@ -20,6 +21,15 @@ function BasicExample() {
               Jobs
             </a>
           </li>
+
+
+          <li className="nav-item">
+            <a className="nav-link" href="/RecruitersPage">
+              Recruiters
+            </a>
+          </li>
+
+
         </ul>
         <form
           className="form-inline my-2 my-lg-0"
@@ -36,7 +46,7 @@ function BasicExample() {
             Search
           </button>
         </form>
-        {recruiter ? (
+        {location.pathname==='/RecruitersPage' ? (
           <div className="text-light" style={{ marginLeft: "15%" }}>
             <a className="nav-link" href="/RecruitersProfile">
               Recruiter's Profile
